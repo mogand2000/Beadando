@@ -1,12 +1,9 @@
 import random
 import numpy as np
-#csapatszam=int(input("A bajnokság csapatainak száma: "))
+csapatszam=int(input("A bajnokság csapatainak száma: "))
 csapat=[]
-#for i in range(csapatszam):
-#    csapat.append(input(f"{i+1}. csapat: "))
-print(csapat)
-csapatszam=4
-csapat=["a","b","c","d"]
+for i in range(csapatszam):
+    csapat.append(input(f"{i+1}. csapat: "))
 csapatpont=np.zeros(csapatszam)
 rugottgol=np.zeros(csapatszam)
 kapottgol=np.zeros(csapatszam)
@@ -80,6 +77,3 @@ print('{0:<15}{1:20}{2:10}{3:15}{4:15}'.format("Helyezés","Név","Pont","Rúgot
 for i in range(matrix.shape[0]):
     print('{0:<15}{1:20}{2:<10}{3:<15}{4:<15}'.format(helyezes,matrix[i,0],matrix[i,1],matrix[i,2],matrix[i,3]))
     helyezes+=1
-print(matrix)
-print(csapatpont)
-print(rugottgol,kapottgol)
