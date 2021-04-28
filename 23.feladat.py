@@ -10,6 +10,7 @@ csapat=["a","b","c","d"]
 csapatpont=np.zeros(csapatszam)
 rugottgol=np.zeros(csapatszam)
 kapottgol=np.zeros(csapatszam)
+
 for i in range(csapatszam):
     for j in range(i+1,csapatszam):
         hazai=random.randint(0,4)
@@ -32,7 +33,47 @@ for i in range(csapatszam):
     matrix[i,1]=int(csapatpont[i])
     matrix[i,2]=int(rugottgol[i])
     matrix[i,3]=int(kapottgol[i])
-#Rendezni kell
+    
+for i in range(matrix.shape[0]):
+    for j in range(i,matrix.shape[0]):
+        if matrix[j,1]>matrix[i,1]:
+            tmp1=matrix[i,1]
+            matrix[i,1]=matrix[j,1]
+            matrix[j,1]=tmp1
+            
+            tmp0 = matrix[i, 0]
+            matrix[i, 0] = matrix[j, 0]
+            matrix[j, 0] = tmp0
+
+            tmp2 = matrix[i, 2]
+            matrix[i, 2] = matrix[j, 2]
+            matrix[j, 2] = tmp2
+            
+            tmp3 = matrix[i, 3]
+            matrix[i, 3] = matrix[j, 3]
+            matrix[i, 3] = matrix[j, 3]
+            matrix[j, 3] = tmp3
+
+for i in range(matrix.shape[0]):
+    for j in range(i,matrix.shape[0]):
+        if matrix[j,1]==matrix[i,1] and (matrix[j,2]-matrix[j,3])>(matrix[i,2]-matrix[i,3]):
+            tmp1 = matrix[i, 1]
+            matrix[i, 1] = matrix[j, 1]
+            matrix[j, 1] = tmp1
+
+            tmp0 = matrix[i, 0]
+            matrix[i, 0] = matrix[j, 0]
+            matrix[j, 0] = tmp0
+
+            tmp2 = matrix[i, 2]
+            matrix[i, 2] = matrix[j, 2]
+            matrix[j, 2] = tmp2
+
+            tmp3 = matrix[i, 3]
+            matrix[i, 3] = matrix[j, 3]
+            matrix[i, 3] = matrix[j, 3]
+            matrix[j, 3] = tmp3
+            
 helyezes=1
 print("Pontállás:")
 for i in range(matrix.shape[0]):
