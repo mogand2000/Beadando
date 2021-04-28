@@ -32,9 +32,7 @@ for i in range(csapatszam):
     matrix[i,1]=int(csapatpont[i])
     matrix[i,2]=int(rugottgol[i])
     matrix[i,3]=int(kapottgol[i])
-for i in range(matrix.shape[0]):
-    for j in range(i,matrix.shape[0]):
-        
+#Rendezni kell
 helyezes=1
 print("Pontállás:")
 for i in range(matrix.shape[0]):
