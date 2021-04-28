@@ -76,8 +76,9 @@ for i in range(matrix.shape[0]):
             
 helyezes=1
 print("Pontállás:")
+print('{0:<15}{1:20}{2:10}{3:15}{4:15}'.format("Helyezés","Név","Pont","Rúgott gólok","Kapott gólok"))
 for i in range(matrix.shape[0]):
-    print('{0:<15}{1:20}{2:10}{3:15}{4:15}'.format(helyezes,matrix[i,0],matrix[i,1],matrix[i,2],matrix[i,3]))
+    print('{0:<15}{1:20}{2:<10}{3:<15}{4:<15}'.format(helyezes,matrix[i,0],matrix[i,1],matrix[i,2],matrix[i,3]))
     helyezes+=1
 print(matrix)
 print(csapatpont)
